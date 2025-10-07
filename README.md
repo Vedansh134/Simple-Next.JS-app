@@ -1,36 +1,65 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+## Getting Started (at your local)
 
-First, run the development server:
+run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Learn More
+# Containerize and Deploy a Next.js Application using Docker, GitHub Actions, and Minikube
+- Implement a CI/CD pipeline to automate the deployment of a Next.js application using Docker, GitHub Actions, and Minikube.
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🛠️ Tech Stack for Application
+- **GitHub :** Source code and version control.
+- **AWS :** Provisioned AWS EC2 for setup minikube
+- **Containerization :** Use Docker for containerizing the application.
+- **GitHub Actions :** Create GitHub Actions workflow for CI/CD.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 📝 Setup & Installation
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Prerequisites
+- Docker installed on your local machine.
+- GitHub account.
+- AWS account (for EC2 instance).
+- Minikube installed on your local machine or EC2 instance.
+- kubectl installed on your local machine or EC2 instance.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Installation
+
+1. Clone or download this repository
+2. Navigate to the project directory:
+   ```bash
+   cd "Simple-Next.JS-app"
+   ```
+3. Install dependencies:
+   ```bash
+   npm run dev
+   ```
+   Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+
+- Below are the steps to containerize and deploy the application.
+
+### Write a Dockerfile to containerize the application using multi-stage builds.
+
+- <b id="Docker">See Dockerfile</b>
+<i>[Dockerfile](https://github.com/Vedansh134/Simple-Next.JS-app/blob/main/workflows/Dockerfile)</i>
+
+### Create a GitHub Actions workflow for CI/CD.
+
+- <b id="GitHub-Actions">See GitHub Actions Workflow</b>
+<i>[GitHub Actions Workflow](https://github.com/Vedansh134/Simple-Next.JS-app/blob/main/workflows/deployment.yaml)</i>
+
+### Create Kubernetes manifests
+
+- <b id="Kubernetes">See Kubernetes Manifests</b>
+<i>[Kubernetes Manifests](https://github.com/Vedansh134/Simple-Next.JS-app/tree/main/kubernetes)</i>
