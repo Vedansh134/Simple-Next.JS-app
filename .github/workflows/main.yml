@@ -37,7 +37,7 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ghcr.io/${{ github.repository_owner }}/${{ github.event.repository.name }}:main
+          tags: ghcr.io/${{ github.repository_owner | lower }}/${{ github.event.repository.name | lower }}:main
 
       - name: Verify the Docker image
         run: |
