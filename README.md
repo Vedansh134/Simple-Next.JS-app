@@ -57,7 +57,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 ### Create a GitHub Actions workflow for CI/CD.
 
 - <b id="GitHub-Actions">See GitHub Actions Workflow</b>
-<i>[GitHub Actions Workflow](https://github.com/Vedansh134/Simple-Next.JS-app/blob/main/workflows/deployment.yaml)</i>
+<i>[GitHub Actions Workflow](https://github.com/Vedansh134/Simple-Next.JS-app/blob/main/.github/workflows/main.yml)</i>
 
 ### Create Kubernetes manifests
 
