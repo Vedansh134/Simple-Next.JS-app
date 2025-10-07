@@ -111,6 +111,15 @@ Access the application:
 
 Open [http://<your_ec2-instance_ip>:3000](http://<public_ip_of_ec2>:3000) with your browser to see the result.
 
+- application-status
+<img src="screenshots/application-status.png" alt="app-status" height="350"/>
+
+- kubectl get all
+<img src="screenshots/kubectl-get-all.png" alt="kubectl-get-all" height="350"/>
+
+- logs and pods
+<img src="screenshots/kubectl-logs-and-pods.png" alt="logs-and-pods" height="350"/>
+
 
 #
 
