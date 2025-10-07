@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: simple-nextjs-app
+  labels:
+    app: simple-nextjs-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: simple-nextjs-app
+  template:
+    metadata:
+      labels:
+        app: simple-nextjs-app
+    spec:
+      containers:
+      - name: simple-nextjs-app
+        image: ghcr.io/vedansh134/simple-next-js-app:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 3000
+
+        env:
+        - name: NODE_ENV
+          value: "production"
