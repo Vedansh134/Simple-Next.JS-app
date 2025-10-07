@@ -1,4 +1,4 @@
-kind: Services
+kind: Service
 apiVersion: v1
 metadata:
   name: nextjs-app-service
@@ -8,7 +8,7 @@ spec:
   type: NodePort
   selector:
     app: simple-nextjs-app
-    ports:
+  ports:
     - port: 3000
       targetPort: 3000
       protocol: TCP
