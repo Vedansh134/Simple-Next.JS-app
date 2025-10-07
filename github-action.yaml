@@ -1,0 +1,44 @@
+name: Build and Push Docker image to GHCR
+
+# Trigger the workflow on push to the main branch
+on:
+  push:
+    branches:
+      - main
+
+# Define permissions for the workflow
+permissions:
+  contents: read    # to access the repository
+  packages: write   # to publish to GHCR
+  id-token: write   # reserved for future OIDC scenarios (safe to include)
+
+# Define the jobs to be run in the workflow
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v3
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+
+      - name: Log in to GitHub Container Registry
+        uses: docker/login-activity@v2
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v4
+        with:
+          context: .
+          file: ./Dockerfile
+          push: true
+          tags: ghcr.io/${{ github.repository_owner }}/${{ github.event.repository.name }}:main
+
+      - name: Verify the Docker image
+        run: |
+          docker run --rm ghcr.io/${{ github.repository_owner }}/my-image:latest echo "Docker image built and pushed successfully!"
